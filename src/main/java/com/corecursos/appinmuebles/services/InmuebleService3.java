@@ -44,7 +44,7 @@ public class InmuebleService3 implements IInmuebleService{
 
 	@Override
 	public List<Inmueble> getByReferencia(String referencia) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
