@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="'Propiedades del DNI ' + ${propietario}"></h1>
+	<table>
+		<thead>
+			<tr>
+				<th style="text-align: left;"><strong>Referencia</strong></th>
+				<th style="text-align: left;"><strong>Propietario</strong></th>
+				<th style="text-align: left;"><strong>Tipo</strong></th>
+				<th style="text-align: left;"><strong>Euros</strong></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="inmueble: ${dni}">
+				<td th:text="${inmueble.referencia}"></td>
+				<td th:text="${inmueble.dniPropietario}"></td>
+				<td th:text="${inmueble.tipo}"></td>
+				<td th:text="${inmueble.precioEuros}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

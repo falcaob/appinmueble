@@ -6,7 +6,7 @@ public interface IInmuebleService {
 	
 	List<Inmueble> getByPropietario(String dniPropietario);
 	List<Inmueble> getByTipo(String tipo);
-	List<Inmueble> getByReferencia(String referencia);
+	Inmueble getByReferencia(String referencia);
 	List<Inmueble> listarInmuebles();
 }
 
