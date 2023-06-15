@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title th:text="${titulo}"></title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style-dni.css}"></link>
 </head>
 <body>
+	<h1 th:text="${titulo1}"></h1>
 	<table>
 		<thead>
 			<tr>
-				<th style="text-align: left;"><strong>Referencia</strong></th>
 				<th style="text-align: left;"><strong>Propietario</strong></th>
+				<th style="text-align: left;"><strong>Referencia</strong></th>
 				<th style="text-align: left;"><strong>Tipo</strong></th>
 				<th style="text-align: left;"><strong>Euros</strong></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="inmueble: ${dni}">
-				<td th:text="${inmueble.referencia}"></td>
 				<td th:text="${inmueble.dniPropietario}"></td>
+				<td th:text="${inmueble.referencia}"></td>
 				<td th:text="${inmueble.tipo}"></td>
 				<td th:text="${inmueble.precioEuros}"></td>
 			</tr>

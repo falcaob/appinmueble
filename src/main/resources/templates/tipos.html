@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title th:text="${titulo}"></title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/style-listado-inmuebles.css}"></link>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style-tipos.css}"></link>
 </head>
 <body>
-	<h1 th:text="${titulo}"></h1>
+	<h1 th:text="${titulo1}"></h1>
 	<div><a th:href="@{/inmuebles/menu-principal}">Inicio</a></div>
-	<img th:src="@{/img/listado-inmuebles.jpg}" alt="Imagen listado inmuebles"></img>
+	<!--  <img th:src="@{/img/listado-inmuebles.jpg}" alt="Imagen listado inmuebles"></img>-->
 	<br>
 	<table>
 		<thead>
 			<tr>
-				<th style="text-align: left;"><strong>Referencia</strong></th>
-				<th style="text-align: left;"><strong>Propietario</strong></th>
-				<th style="text-align: left;"><strong>Tipo</strong></th>
-				<th style="text-align: left;"><strong>Euros</strong></th>
+				<th style="text-align: left;"><strong>Casa</strong></th>
+				<th style="text-align: left;"><strong>Apartamento</strong></th>
+				<th style="text-align: left;"><strong>Piso</strong></th>
+				<th style="text-align: left;"><strong>Chalet</strong></th>
 			</tr>
 		</thead>
 		<tbody>

@@ -47,7 +47,7 @@ public class ControladorInmueble {
 	public String m3(@PathVariable String dni, Model model) {
 
 		model.addAttribute("titulo", titulo);
-		//model.addAttribute("propietario", dni);
+		model.addAttribute("titulo1", "Listado por DNI del Propietario");
 		model.addAttribute("dni", servicioInmueble.getByPropietario(dni));
 		
 		return "dni";
@@ -58,9 +58,22 @@ public class ControladorInmueble {
 		public String m4(@PathVariable String referencia, Model model) {
 
 			model.addAttribute("titulo", titulo);
+			model.addAttribute("titulo1", "Listado por referencia");
 			model.addAttribute("referencia", servicioInmueble.getByReferencia(referencia));
 			
 			return "referencia";
 		}
+		
+	// Búsqueda por tipo de Inmueble 
+		@GetMapping("/tipos")
+		public String m5(Model model) {
 
+			model.addAttribute("titulo", titulo);
+			model.addAttribute("titulo1", "Búqueda por tipo: pincha en la foto del inmueble");
+			//model.addAttribute("listaInmuebles", servicioInmueble.listarInmuebles());
+
+			return "tipos";
+		}
+		
+		
 }
