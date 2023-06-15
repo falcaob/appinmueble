@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.corecursos.appinmuebles.models.IInmuebleService;
 
 @Controller
-@RequestMapping({ "/index", "/", "" })
+@RequestMapping("inmuebles")
 public class ControladorInmueble {
 
 	@Autowired
@@ -32,7 +33,7 @@ public class ControladorInmueble {
 	}
 
 	// Enlace lista completa de inmuebles
-	@GetMapping("/listado-inmuebles")
+	@GetMapping("/listado")
 	public String m2(Model model) {
 
 		model.addAttribute("titulo", titulo);
@@ -43,35 +44,23 @@ public class ControladorInmueble {
 
 	// Enlace búsqueda por dni
 	@GetMapping("/dni/{dni}")
-	public String m3(@RequestParam(required = false) String dni, Model model) {
+	public String m3(@PathVariable String dni, Model model) {
 
 		model.addAttribute("titulo", titulo);
-		model.addAttribute("propietario", dni);
-		// model.addAttribute("dni", servicioInmueble.getByPropietario(dni));
-
-		if (dni == null) {
-			model.addAttribute("dni", servicioInmueble.getByPropietario(dni));
-		} else {
-			model.addAttribute("dni", servicioInmueble.getByPropietario(dni));
-		}
-
+		//model.addAttribute("propietario", dni);
+		model.addAttribute("dni", servicioInmueble.getByPropietario(dni));
+		
 		return "dni";
 	}
 
-	// Enlace búsqueda por dni
-	@GetMapping("/referencia/{referencia}")
-	public String m4(@RequestParam(required = false) String referencia, Model model) {
+	// Enlace búsqueda por referencia
+		@GetMapping("/referencia/{referencia}")
+		public String m4(@PathVariable String referencia, Model model) {
 
-		model.addAttribute("titulo", titulo);
-		model.addAttribute("ref", referencia);
-
-		if (referencia == null) {
+			model.addAttribute("titulo", titulo);
 			model.addAttribute("referencia", servicioInmueble.getByReferencia(referencia));
-		} else {
-			model.addAttribute("referencia", servicioInmueble.getByReferencia(referencia));
+			
+			return "referencia";
 		}
-
-		return "referencia";
-	}
 
 }

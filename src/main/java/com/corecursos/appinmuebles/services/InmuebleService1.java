@@ -18,7 +18,6 @@ public class InmuebleService1 implements IInmuebleService{
 		
 		this.listaInmuebles = new ArrayList<>();
 		
-		listaInmuebles.add(new Inmueble("#25614", "29504498Y", "Casa", 20_000));
 		
 		/*
 		for(int i = 0; i < 100; i++) {
@@ -32,18 +31,18 @@ public class InmuebleService1 implements IInmuebleService{
 		}
 		*/
 		
-	    listaInmuebles.add(new Inmueble("#25614", "29504498Y", "Casa", 20_000));
-	    listaInmuebles.add(new Inmueble("#12345", "12345678Z", "Apartamento", 30_000));
-	    listaInmuebles.add(new Inmueble("#67890", "98765432A", "Piso", 25_000));
-	    listaInmuebles.add(new Inmueble("#54321", "54321098B", "Chalet", 50_000));
-	    listaInmuebles.add(new Inmueble("#98765", "01234567C", "Casa", 40_000));
-	    listaInmuebles.add(new Inmueble("#13579", "98765012D", "Apartamento", 35_000));
-	    listaInmuebles.add(new Inmueble("#24680", "45678901E", "Piso", 30_000));
-	    listaInmuebles.add(new Inmueble("#86420", "10987654F", "Chalet", 60_000));
-	    listaInmuebles.add(new Inmueble("#97531", "76543210G", "Casa", 45_000));
-	    listaInmuebles.add(new Inmueble("#01234", "21098765H", "Apartamento", 40_000));
-	    listaInmuebles.add(new Inmueble("#56789", "54321098I", "Piso", 35_000));
-	    listaInmuebles.add(new Inmueble("#98765", "87654321J", "Chalet", 70_000));
+	    listaInmuebles.add(new Inmueble("25614", "29504498Y", "Casa", 20_000));
+	    listaInmuebles.add(new Inmueble("12345", "12345678Z", "Apartamento", 30_000));
+	    listaInmuebles.add(new Inmueble("67890", "98765432A", "Piso", 25_000));
+	    listaInmuebles.add(new Inmueble("54321", "54321098B", "Chalet", 50_000));
+	    listaInmuebles.add(new Inmueble("98765", "01234567C", "Casa", 40_000));
+	    listaInmuebles.add(new Inmueble("13579", "98765012D", "Apartamento", 35_000));
+	    listaInmuebles.add(new Inmueble("24680", "45678901E", "Piso", 30_000));
+	    listaInmuebles.add(new Inmueble("86420", "10987654F", "Chalet", 60_000));
+	    listaInmuebles.add(new Inmueble("97531", "76543210G", "Casa", 45_000));
+	    listaInmuebles.add(new Inmueble("01234", "21098765H", "Apartamento", 40_000));
+	    listaInmuebles.add(new Inmueble("56789", "54321098I", "Piso", 35_000));
+	    listaInmuebles.add(new Inmueble("98765", "87654321J", "Chalet", 70_000));
 	    listaInmuebles.add(new Inmueble("#54321", "21098765K", "Casa", 55_000));
 	    listaInmuebles.add(new Inmueble("#35791", "65432109L", "Apartamento", 50_000));
 	    listaInmuebles.add(new Inmueble("#95173", "09876543M", "Piso", 40_000));
@@ -131,13 +130,13 @@ public class InmuebleService1 implements IInmuebleService{
 	    listaInmuebles.add(new Inmueble("#54321", "21098765K", "Casa", 55_000));
 	    listaInmuebles.add(new Inmueble("#35791", "65432109L", "Apartamento", 50_000));
 	    listaInmuebles.add(new Inmueble("#95173", "09876543M", "Piso", 40_000));
-		
 		
 	}
 	
 	@Override
 	public List<Inmueble> getByPropietario(String dniPropietario) {
 		List<Inmueble> inmuebles = new ArrayList<>();
+		if(dniPropietario == null) return null;
 		for(Inmueble inmueble : listaInmuebles) {
 			if(dniPropietario.equals(inmueble.getDniPropietario())){
 				inmuebles.add(inmueble);
@@ -154,15 +153,15 @@ public class InmuebleService1 implements IInmuebleService{
 	}
 
 	@Override
-	public Inmueble getByReferencia(String referencia) {
-		Inmueble i = new Inmueble();
-		if(referencia == null) return null;
+	public List<Inmueble> getByReferencia(String referencia) {
+		List<Inmueble> inmuebles = new ArrayList<>();
+		
 		for(Inmueble inmueble : listaInmuebles) {
 			if(referencia.equals(inmueble.getReferencia())){
-				i = inmueble;
+				inmuebles.add(inmueble);
 			}
 		}
-		return i;
+		return inmuebles;
 	}
 
 	@Override

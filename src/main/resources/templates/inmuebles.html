@@ -21,14 +21,15 @@
 		<tbody>
 			<tr th:each="inmueble : ${listaInmuebles}">
 				<td>
-					<a th:href="@{/referencia/{referencia}} + '?referencia=' + ${inmueble.referencia}">
-						<span th:text="${inmueble.referencia}"></span>
-					</a>
+					<a th:href="@{'/inmuebles/referencia/' + ${inmueble.referencia}}">
+        				<span th:text="${inmueble.referencia}"></span>
+    				</a>
 				</td>
+				
 				<td>
-					<a th:href="@{/dni/{dni}} + '?dni=' + ${inmueble.dniPropietario}">
-						<span th:text="${inmueble.dniPropietario}"></span>
-					</a>
+					<a th:href="@{'/inmuebles/dni/' + ${inmueble.dniPropietario}}">
+        				<span th:text="${inmueble.dniPropietario}"></span>
+    				</a>
 				</td>
 				<td th:text="${inmueble.tipo}"></td>
 				<td th:text="${inmueble.precioEuros}"></td>
