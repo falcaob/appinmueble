@@ -7,25 +7,35 @@
 </head>
 <body>
 	<h1 th:text="${titulo1}"></h1>
-	<div>
-		<a th:href="@{/inmuebles/menu-principal}">Inicio</a>
-	</div>
-	<!--  <img th:src="@{/img/listado-inmuebles.jpg}" alt="Imagen listado inmuebles"></img>-->
+	<div class="contenedor">
 	<br>
 	<div>
 		<h3>CASA</h3>
 		<a th:href="@{'/inmuebles/tipo/casa'}">
-			<img th:src="@{/img/casa.png}" alt="Casa"></img>
+			<img th:src="@{/img/casa.jpg}" alt="Casa"></img>
 		</a>
 	</div>
 	<div>
-		<a th:href="@{'/inmuebles/tipo/Apartamento'}">Apartamento</a>
+		<h3>APARTAMENTO</h3>
+		<a th:href="@{'/inmuebles/tipo/Apartamento'}">
+			<img th:src="@{/img/apartamento.jpg}" alt="Apartamento"></img>
+		</a>
 	</div>
 	<div>
-		<a th:href="@{'/inmuebles/tipo/Piso'}">Piso</a>
+		<h3>PISO</h3>
+		<a th:href="@{'/inmuebles/tipo/Piso'}">
+			<img th:src="@{/img/pisos.jpg}" alt="Piso"></img>
+		</a>
 	</div>
 	<div>
-		<a th:href="@{'/inmuebles/tipo/Chalet'}">Chalet</a>
+		<h3>CHALET</h3>
+		<a th:href="@{'/inmuebles/tipo/Chalet'}">
+			<img th:src="@{/img/chalet.jpg}" alt="Chalet"></img>
+		</a>
 	</div>
+	</div>
+	<h2>
+		<a th:href="@{/inmuebles/menu-principal}">Inicio</a>
+	</h2>
 </body>
 </html>

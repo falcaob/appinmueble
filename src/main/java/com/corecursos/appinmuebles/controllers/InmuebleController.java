@@ -14,7 +14,7 @@ import com.corecursos.appinmuebles.models.IInmuebleService;
 
 @Controller
 @RequestMapping("inmuebles")
-public class ControladorInmueble {
+public class InmuebleController {
 
 	@Autowired
 	@Qualifier("inmuebleService1")
