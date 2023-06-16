@@ -49,31 +49,40 @@ public class ControladorInmueble {
 		model.addAttribute("titulo", titulo);
 		model.addAttribute("titulo1", "Listado por DNI del Propietario");
 		model.addAttribute("dni", servicioInmueble.getByPropietario(dni));
-		
+
 		return "dni";
 	}
 
 	// Enlace búsqueda por referencia
-		@GetMapping("/referencia/{referencia}")
-		public String m4(@PathVariable String referencia, Model model) {
+	@GetMapping("/referencia/{referencia}")
+	public String m4(@PathVariable String referencia, Model model) {
 
-			model.addAttribute("titulo", titulo);
-			model.addAttribute("titulo1", "Listado por referencia");
-			model.addAttribute("referencia", servicioInmueble.getByReferencia(referencia));
-			
-			return "referencia";
-		}
-		
-	// Búsqueda por tipo de Inmueble 
-		@GetMapping("/tipos")
-		public String m5(Model model) {
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("titulo1", "Listado por referencia");
+		model.addAttribute("referencia", servicioInmueble.getByReferencia(referencia));
 
-			model.addAttribute("titulo", titulo);
-			model.addAttribute("titulo1", "Búqueda por tipo: pincha en la foto del inmueble");
-			//model.addAttribute("listaInmuebles", servicioInmueble.listarInmuebles());
+		return "referencia";
+	}
 
-			return "tipos";
-		}
+	// Index búsqueda por tipos
+	@GetMapping("/listado-tipos")
+	public String m5(Model model) {
+
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("titulo1", "Búqueda por tipo: pincha en la foto del inmueble");
 		
-		
+
+		return "tipos";
+	}
+
+	// Index búsqueda por tipos
+	@GetMapping("/tipo/{tipo}")
+	public String m6(@PathVariable String tipo, Model model) {
+
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("tipo", servicioInmueble.getByTipo(tipo));
+
+		return "tipo";
+	}
+
 }

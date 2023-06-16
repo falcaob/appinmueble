@@ -148,8 +148,14 @@ public class InmuebleService1 implements IInmuebleService{
 
 	@Override
 	public List<Inmueble> getByTipo(String tipo) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Inmueble> inmuebles = new ArrayList<>();
+		if(tipo == null) return null;
+		for(Inmueble inmueble: listaInmuebles) {
+			if(tipo.equalsIgnoreCase(inmueble.getTipo())) {
+				inmuebles.add(inmueble);
+			}
+		}
+		return inmuebles;
 	}
 
 	@Override

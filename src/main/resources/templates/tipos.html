@@ -7,35 +7,25 @@
 </head>
 <body>
 	<h1 th:text="${titulo1}"></h1>
-	<div><a th:href="@{/inmuebles/menu-principal}">Inicio</a></div>
+	<div>
+		<a th:href="@{/inmuebles/menu-principal}">Inicio</a>
+	</div>
 	<!--  <img th:src="@{/img/listado-inmuebles.jpg}" alt="Imagen listado inmuebles"></img>-->
 	<br>
-	<table>
-		<thead>
-			<tr>
-				<th style="text-align: left;"><strong>Casa</strong></th>
-				<th style="text-align: left;"><strong>Apartamento</strong></th>
-				<th style="text-align: left;"><strong>Piso</strong></th>
-				<th style="text-align: left;"><strong>Chalet</strong></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="inmueble : ${listaInmuebles}">
-				<td>
-					<a th:href="@{'/inmuebles/referencia/' + ${inmueble.referencia}}">
-        				<span th:text="${inmueble.referencia}"></span>
-    				</a>
-				</td>
-				
-				<td>
-					<a th:href="@{'/inmuebles/dni/' + ${inmueble.dniPropietario}}">
-        				<span th:text="${inmueble.dniPropietario}"></span>
-    				</a>
-				</td>
-				<td th:text="${inmueble.tipo}"></td>
-				<td th:text="${inmueble.precioEuros}"></td>
-			</tr>
-		</tbody>
-	</table>
+	<div>
+		<h3>CASA</h3>
+		<a th:href="@{'/inmuebles/tipo/casa'}">
+			<img th:src="@{/img/casa.png}" alt="Casa"></img>
+		</a>
+	</div>
+	<div>
+		<a th:href="@{'/inmuebles/tipo/Apartamento'}">Apartamento</a>
+	</div>
+	<div>
+		<a th:href="@{'/inmuebles/tipo/Piso'}">Piso</a>
+	</div>
+	<div>
+		<a th:href="@{'/inmuebles/tipo/Chalet'}">Chalet</a>
+	</div>
 </body>
 </html>
