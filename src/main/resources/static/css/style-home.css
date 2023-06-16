@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+* {
+	font-family: monospace;
+	font-size: 30px;
+}
+
 body {
 	background-image: url("../img/inicio.jpg");
 	background-repeat: no-repeat;

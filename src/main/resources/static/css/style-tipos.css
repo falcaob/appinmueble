@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+* {
+	font-family: monospace;
+}
+
 h1 {
 	text-align: center;
 }
